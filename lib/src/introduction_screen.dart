@@ -87,6 +87,10 @@ class IntroductionScreen extends StatefulWidget {
   /// @Default `Curves.easeIn`
   final Curve curve;
 
+  final double positionRight;
+  final double positionLeft;
+  final double positionBottom;
+
   const IntroductionScreen({
     Key key,
     @required this.pages,
@@ -107,6 +111,9 @@ class IntroductionScreen extends StatefulWidget {
     this.skipFlex = 1,
     this.dotsFlex = 1,
     this.nextFlex = 1,
+    this.positionRight = 16,
+    this.positionLeft = 16,
+    this.positionBottom = 16,
     this.curve = Curves.easeIn,
   })  : assert(pages != null),
         assert(
@@ -209,9 +216,9 @@ class IntroductionScreenState extends State<IntroductionScreen> {
             ),
           ),
           Positioned(
-            bottom: 0.0,
-            left: 0.0,
-            right: 0.0,
+            bottom: widget.positionBottom,
+            left: widget.positionLeft,
+            right: widget.positionRight,
             child: SafeArea(
               child: Row(
                 children: [
